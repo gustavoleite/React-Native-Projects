@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
+import axios from 'axios';
 
 class AlbumList extends Component {
   componentWillMount() {
-    console.log('ComponentWillMount in AlbumList');
+    axios.get('http://rallycoding.herokupp.com/api/music_albums')
+    .then(response => console.log(response));
   }
 
   render() {
